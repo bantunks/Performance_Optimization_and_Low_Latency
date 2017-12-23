@@ -1,0 +1,8 @@
+Core Concepts --
+1. In-memory data structures and in-memory computation
+2. Avoid disk I/O as much as possible, use disk only for persistence
+3. Understand the trade-off b/w write-through and write-back operations b/w main memory and disk
+  3.1 For e.g., depending on the application, prefer write-back and go for write-through in a batch mode, reducing number of hops to disk
+4. Avoid expensive context switches b/w user-space and kernel-space by avoiding system calls as much as possible
+  4.2 Usage of optimized system calls like sendfile() which avoids the double context switching b/w user-space and kernel-space by copying       the data within the kernel itself
+5. Look for opportunities to exploit lock-free programming techniques for synchronization by using lock-free data structures that can avoid the overhead of context switching incurred by other usual IPC techniques like message queues.
