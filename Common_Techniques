@@ -1,3 +1,17 @@
+     
+     
+     Comparison of Memory and Storage Technologies. Properties and performance comparison of memory, storage, and NVM 
+     Other NVMs include the Memristor, STTM, FeRAM, and MRAM.
+
+                            DRAM                  NAND Flash             HDD                  PCM                  Other NVMs 
+Density (F^2)               6-12                     1-4                  2/3                 4-16                   4-60 
+Read Latency                10-50ns                   25µs                5ms                48-70ns                 10-100ns 
+Write Bandwidth             1GB/s per die       5-40MB/s per die    100MB/s per drive     100MB/s per die      140MB/s - 1GB/s per die 
+Endurance (cycles)          >10^16                   10^4               > 10^16               10^9                10^12 − 10^15 
+Byte Addressable            Yes                       No                  No                  Yes                      Yes 
+Volatile                    Yes                       No                  No                   No                       No 
+
+
 Core Concepts --
 1. In-memory data structures and in-memory computation
 2. Avoid disk I/O as much as possible, use disk only for persistence
