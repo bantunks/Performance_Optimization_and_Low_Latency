@@ -18,6 +18,8 @@ Core Concepts --
 3. Understand the trade-off b/w write-through and write-back operations b/w main memory and disk
   3.1 For e.g., depending on the application, prefer write-back and go for write-through in a batch mode, reducing number of hops to disk
 4. Avoid expensive context switches b/w user-space and kernel-space by avoiding system calls as much as possible
-  4.2 Usage of optimized system calls like sendfile() which avoids the double context switching b/w user-space and kernel-space by copying       the data within the kernel itself
+  4.2 Usage of optimized system calls like sendfile() which avoids the double context switching b/w user-space and kernel-space by copying the data within the kernel itself
 5. Look for opportunities to exploit lock-free programming techniques for synchronization by using lock-free data structures that can avoid the overhead of context switching incurred by other usual IPC techniques like message queues.
 6. Use the correct and optimal data structure for the problem statement in hand. For instance, for O(1) insertion, deletion and retrieval of non-ordered data set, hash based data structures should be the most optimal.
+7. Request-Response designs are usually sysnchronous, which means they are usually blocking. Constrast this with queue based designs that support asynchronous interaction. The Queue data structure servers well by queuing the requests and the server can pull off the requests in a FIFO manner. Each incoming request can be responded to immediately as soon as it has been queued. The server post processing the request could return the response in another queue for the client to consume.
+8. Publish-Suscribe designs are usually asynchronous.
